@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'MoneaAlegante';
+  src: url('assets/fonts/MoneaAlegante.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.parallax {
+  position: relative;
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  align-items: center;      /* centers vertically */
+  text-align: center;
+
+  min-height: 600px;
+  background-image: url("assets/img_narxxBG.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.parallax h1{
+	font-size: 9rem;
+	font-family: 'MoneaAlegante', sans-serif;
+	color: #BF7AC3;
+	text-shadow: 5px 5px 8px rgba(255,255,255,0.5);
+	max-width: 90%;
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: inherit;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(3.5px);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+/* Optional soft fade at the bottom */
+.parallax::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #FAF9F6 100%);
+  z-index: 1;
+}
+
+.parallax > * {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.content-panel {
+  background-color: #FFFFFF;
+  font-size: 36px; 
+  min-height: 100vh;
+  padding: 2rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+
