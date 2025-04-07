@@ -10,4 +10,6 @@
 2. Page must look minimalist and showcase various images while scrolling down
 3. Social media bar that contains hyperlinks to SNS accounts
 4. Parallax effect on background image
-5. Use fonts similar to the examples given.
+5. Use fonts as directed
+    - Hagrid for links on the navbar
+    - MoneaAlegante for the brand name (Narxx, not NARXX)

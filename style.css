@@ -1,3 +1,4 @@
+/*Removes the border box*/
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,15 @@ html, body {
   height: 100%;
 }
 
+/*Font faces*/
+
+@font-face {
+  font-family: 'Hagrid';
+  src: url('assets/fonts/Hagrid.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'MoneaAlegante';
   src: url('assets/fonts/MoneaAlegante.otf') format('opentype');
@@ -16,12 +26,20 @@ html, body {
   font-style: normal;
 }
 
+@font-face {
+	font-family: 'HelsaDisplay';
+	src: url('assets/fonts/HelsaDisplay.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*Navbar implementation*/
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   height: 70px;
-  background: rgba(250, 249, 246, 0.8); /* soft, semi-transparent */
+  background: rgba(250, 249, 246, 0.6); /* soft, semi-transparent */
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
@@ -32,11 +50,12 @@ html, body {
 }
 
 .navbar-logo {
-  font-family: 'Monea Elegante', sans-serif;
-  font-size: 1.8rem;
+  font-family: 'MoneaAlegante', sans-serif;
+  font-size: 3rem;
   color: #BF7AC3;
 }
 
+/* Navbar links and menu*/
 .navbar-links {
   list-style: none;
   display: flex;
@@ -47,16 +66,20 @@ html, body {
 
 .navbar-links a {
   text-decoration: none;
-  font-family: 'Gruppo', sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Hagrid', sans-serif;
+  font-size: 2.1rem;
   color: #333;
   transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
+  transition: all 0.3s ease;
   color: #BF7AC3;
 }
 
+.nav-item 
+
+/*Navbar hamburger menu*/
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -90,6 +113,7 @@ html, body {
   }
 }
 
+/*Parallax background*/
 .parallax {
   position: relative;
   display: flex;
@@ -105,6 +129,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  z-index:1;
 }
 
 .parallax h1{
@@ -149,7 +174,7 @@ html, body {
   font-size: 2rem;
 }
 
-.content-panel {
+.contentPanel {
   background-color: #FFFFFF;
   font-size: 36px; 
   min-height: 100vh;
