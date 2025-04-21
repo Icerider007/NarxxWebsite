@@ -183,6 +183,9 @@ html, body {
     max-width: 100%;
   }
 
+  .navbar{
+    height:120px;
+  }
   .navbar-logo img{
     display:none;
   }
