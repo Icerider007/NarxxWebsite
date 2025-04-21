@@ -38,8 +38,8 @@ html, body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
-  background: rgba(250, 249, 246, 0.6); /* soft, semi-transparent */
+  height: 180px;
+  background: rgba(250, 249, 246, 0.8); /* soft, semi-transparent */
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
@@ -51,9 +51,30 @@ html, body {
 
 .navbar-logo {
   font-family: 'MoneaAlegante', sans-serif;
-  font-size: 3rem;
+  font-size: 1rem;
   color: #BF7AC3;
+
+  position: fixed;
+  top: 0;
+  left: 91%; /*Arrived at this value through trial and error*/
+  padding: 10px 0;
+  z-index: 3;
 }
+
+.navbar-logo img {
+  /*border-radius: 50%; */
+  /*Make sure it's a perfect circle */
+  /*box-shadow: 0 3vw 6vw 2vw rgba(255, 255, 255, 0.5);*/
+  /* hshift, vshift, blur_radius, spread_radius*/
+
+  width: 15vw; /* % of the viewport width */
+  height: auto;
+  max-width: 150px;          /* Prevents it from getting too big on huge screens */
+  max-height: 150px;
+  min-width: 100px;          /* Optional: don't let it get too tiny */
+  min-height: 100px;
+}
+
 
 /* Navbar links and menu*/
 .navbar-links {
@@ -61,7 +82,7 @@ html, body {
   display: flex;
   gap: 2rem;
   margin: 0;
-  padding: 0;
+  padding: 2%;
 }
 
 .navbar-links a {
@@ -77,69 +98,43 @@ html, body {
   color: #BF7AC3;
 }
 
-.nav-item 
-
-/*Navbar hamburger menu*/
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .navbar-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: rgba(250, 249, 246, 0.95);
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-}
-
 /*Parallax background*/
+/* --- Desktop & Base Styles --- */
 .parallax {
   position: relative;
   display: flex;
-  justify-content: center;  /* centers horizontally */
-  align-items: center;      /* centers vertically */
+  justify-content: center;     /* center horizontally */
+  align-items: center;         /* center vertically */
   text-align: center;
 
   min-height: 600px;
-  padding-top: 70px;
-  background-image: url("assets/img_narxxBG.png");
+  padding-top: 70px;           /* leaves space for fixed navbar */
+  background-image: url("assets/img_narxxBG_alt.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  z-index:1;
+  z-index: 1;
 }
 
-.parallax h1{
-	font-size: 9rem;
-	font-family: 'MoneaAlegante', sans-serif;
-	color: #BF7AC3;
-	text-shadow: 5px 5px 8px rgba(255,255,255,0.5);
-	max-width: 90%;
+.parallax h1 {
+  font-size: 9rem;
+  font-family: 'MoneaAlegante', sans-serif;
+  color: #53286a;
+  text-shadow: 5px 5px 8px rgba(255, 255, 255, 0.5);
+  max-width: 90%;
+
+  /*I got this code snippet off of stackoverflow. Dunno if it works. Sorry for the messy code*/
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
+/* Blurred background overlay */
 .parallax::before {
   content: "";
   position: absolute;
@@ -154,7 +149,7 @@ html, body {
   z-index: 0;
 }
 
-/* Optional soft fade at the bottom */
+/* Soft fade at bottom */
 .parallax::after {
   content: "";
   position: absolute;
@@ -162,16 +157,35 @@ html, body {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #FAF9F6 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #FAF9F6 100%);
   z-index: 1;
 }
 
+/* Ensures text/content is above the blurred layer */
 .parallax > * {
   position: relative;
   z-index: 2;
   color: white;
   padding: 2rem;
   font-size: 2rem;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+  .parallax {
+    padding-top: 70px;      /* keep navbar space */
+    min-height: 400px;      /* reduce height for smaller screens */
+  }
+
+  .parallax h1 {
+    font-size: 6rem;        /* scale down text */
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .navbar-logo img{
+    display:none;
+  }
 }
 
 .contentPanel {
@@ -183,4 +197,5 @@ html, body {
   border-top-right-radius: 2rem;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
 }
+
 
