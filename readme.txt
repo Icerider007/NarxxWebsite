@@ -1,3 +1,9 @@
+This is just a website I made for a friend to help in my free time.
+
+It was supposed to be something I made in my free time, but I got strangely obsessed with having to finish it
+because I was insecure about my coding skill and wanted a product that I could finish immediately and showcase.
+
+--------------------------------------------------------------------------------------
 I111t is a free HTML CSS template by https://templatesjungle.com/
 
 You can use this template as a starter template and start building as you require.
